@@ -2,6 +2,7 @@ package com.deflatedpickle.justdimensionkeys
 
 import com.deflatedpickle.justdimensionkeys.References._
 import com.deflatedpickle.justdimensionkeys.common.Proxy
+import com.deflatedpickle.justdimensionkeys.common.item.ItemDimensionKey
 import net.minecraft.item.Item
 import net.minecraftforge.fml.common.Mod.EventHandler
 import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPreInitializationEvent}
@@ -17,7 +18,7 @@ object JustDimensionKeys {
   @SidedProxy(clientSide = ClientProxyClass, serverSide = ServerProxyClass)
   var proxy: Proxy = _
 
-  val keyList: mutable.MutableList[Item] = mutable.MutableList[Item]()
+  val keyList: mutable.MutableList[ItemDimensionKey] = mutable.MutableList[ItemDimensionKey]()
 
   @EventHandler
   def preInit(event: FMLPreInitializationEvent): Unit = {
