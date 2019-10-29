@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "justdimensionkeys",
+    "name": "JustDimensionKeys",
+    "description": "A mod that, for each registered dimension, adds a key to travel to said dimension.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/DeflatedPickle/JustDimensionKeys",
+    "updateUrl": "",
+    "authorList": [
+      "DeflatedPickle"
+    ],
+    "credits": "Mojang, Minecraft, Forge, FML",
+    "logoFile": "logo.png",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

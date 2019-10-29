@@ -2,12 +2,11 @@ package com.deflatedpickle.justdimensionkeys.common.item
 
 import com.deflatedpickle.justdimensionkeys.References._
 import net.minecraft.creativetab.CreativeTabs
-import net.minecraft.entity.{Entity, EntityLivingBase}
 import net.minecraft.entity.player.EntityPlayer
+import net.minecraft.entity.{Entity, EntityLivingBase}
 import net.minecraft.item.{EnumAction, Item, ItemStack}
-import net.minecraft.util.{ActionResult, EnumActionResult, EnumHand, ResourceLocation}
+import net.minecraft.util.{ActionResult, EnumActionResult, EnumHand}
 import net.minecraft.world.{DimensionType, World}
-import net.minecraftforge.common.util.ITeleporter
 
 class ItemDimensionKey(val dimension: DimensionType = DimensionType.OVERWORLD) extends Item {
   this.setRegistryName(s"$ModID:dimension_key_${dimension.getName}")
