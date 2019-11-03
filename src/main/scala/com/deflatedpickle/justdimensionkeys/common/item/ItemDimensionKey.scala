@@ -11,12 +11,13 @@ import net.minecraft.item.{EnumAction, Item, ItemStack}
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.{ActionResult, EnumActionResult, EnumFacing, EnumHand}
 import net.minecraft.world.{DimensionType, World}
+import net.minecraftforge.fml.relauncher.{Side, SideOnly}
 
 import scala.util.Random
 
 class ItemDimensionKey(val dimension: DimensionType = DimensionType.OVERWORLD) extends Item {
-  this.setRegistryName(s"$ModID:dimension_key_${dimension.getName}")
-  this.setCreativeTab(CreativeTabs.TOOLS)
+  this.setRegistryName(s"$ModID:dimension_key_${dimension.name()}")
+  // this.setCreativeTab(CreativeTabs.TOOLS)
 
   override def getItemStackDisplayName(stack: ItemStack): String = s"${dimension.getName.split("_").map(s => s.capitalize).mkString(" ")} Key"
 
@@ -32,7 +33,10 @@ class ItemDimensionKey(val dimension: DimensionType = DimensionType.OVERWORLD) e
   }
 
   override def onItemRightClick(worldIn: World, playerIn: EntityPlayer, handIn: EnumHand): ActionResult[ItemStack] = {
-    if (playerIn.dimension == this.dimension.getId) {
+    val field = classOf[DimensionType].getDeclaredField("id")
+    field.setAccessible(true)
+
+    if (playerIn.dimension == field.get(this.dimension).asInstanceOf[Int]) {
       return new ActionResult(EnumActionResult.FAIL, playerIn.getHeldItem(handIn))
     }
 

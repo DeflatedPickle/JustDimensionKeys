@@ -8,5 +8,5 @@ object References {
   final val AcceptedVersions = "[1.12.2]"
 
   final val ClientProxyClass = "com.deflatedpickle.justdimensionkeys.client.Proxy"
-  final val ServerProxyClass = "com.deflatedpickle.justdimensionkeys.server.Proxy"
+  final val ServerProxyClass = "com.deflatedpickle.justdimensionkeys.common.Proxy"
 }
